@@ -1,0 +1,31 @@
+{
+ "play_store": {
+  "collected_at": "2026-11-01T02:05:05.279Z",
+  "app": "com.nextbillion.groww",
+  "store": "Google Play (hl=en_IN)",
+  "total_reviews_pulled": 9900,
+  "date_range": [
+   "2026-08-25",
+   "2026-10-31"
+  ],
+  "kept_rule": "text length >= 40 characters",
+  "kept": 1803
+ },
+ "survey": {
+  "n": 20,
+  "collected": "Oct 2026 screener, free-text answers"
+ },
+ "app_store": {
+  "source": "Apple App Store (in) RSS customerreviews",
+  "app_id": 1404871703,
+  "collected_at": "2026-11-01T02:16:20.833Z",
+  "pages": 10,
+  "items": 500
+ },
+ "tradingqna": {
+  "source": "tradingqna.com (Zerodha forum)",
+  "collected_at": "2026-11-01T02:16:14.373Z",
+  "method": "Discourse /search.json across 16 SIP-discontinuation queries",
+  "items": 317
+ }
+}

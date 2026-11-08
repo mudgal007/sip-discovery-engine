@@ -1,0 +1,969 @@
+{
+ "model": "claude-haiku-5-5",
+ "totals": {
+  "items": 2382,
+  "relevant": 346,
+  "counted": 170,
+  "held_back": 176
+ },
+ "by_source": {
+  "app_store": {
+   "total": 242,
+   "relevant": 25,
+   "counted": 10
+  },
+  "play_store": {
+   "total": 1803,
+   "relevant": 98,
+   "counted": 44
+  },
+  "survey": {
+   "total": 20,
+   "relevant": 15,
+   "counted": 7
+  },
+  "tradingqna": {
+   "total": 317,
+   "relevant": 208,
+   "counted": 109
+  }
+ },
+ "primary_trigger": {
+  "friction": 43,
+  "involuntary": 21,
+  "belief_collapse": 12,
+  "better_alternative": 10,
+  "income_shock": 3,
+  "market_fear": 3,
+  "goal_reallocation": 1
+ },
+ "outcome": {
+  "unclear": 78,
+  "continuing": 37,
+  "never_started": 28,
+  "stopped": 22,
+  "paused": 3,
+  "switched": 1,
+  "resumed": 1
+ },
+ "info_gaps": {
+  "payment_mandate_mechanics": 92,
+  "exit_withdrawal_rules": 29,
+  "fund_choice": 20,
+  "how_returns_work": 15,
+  "tax": 13,
+  "risk_volatility": 6
+ },
+ "help_channels": {
+  "in_app_support": 32,
+  "reddit_forum": 31,
+  "google": 11,
+  "friend_family": 3,
+  "youtube": 2,
+  "advisor": 2
+ },
+ "expectation": {
+  "unclear": 136,
+  "long_term_growth": 18,
+  "monthly_profit": 6,
+  "tax_saving": 5,
+  "savings_discipline": 3,
+  "goal_specific": 2
+ },
+ "stage": {
+  "unclear": 73,
+  "pre_start": 45,
+  "3_to_12_months": 25,
+  "after_12_months": 17,
+  "first_3_months": 10
+ },
+ "knew_flexibility": {
+  "unclear": 153,
+  "no": 6,
+  "yes": 11
+ },
+ "examples": [
+  {
+   "source": "survey",
+   "trigger": "involuntary",
+   "evidence": "The portfolio fot cancelled by it own.",
+   "confidence": "medium"
+  },
+  {
+   "source": "survey",
+   "trigger": "belief_collapse",
+   "evidence": "I was not getting good results that why I stopped.",
+   "confidence": "medium"
+  },
+  {
+   "source": "survey",
+   "trigger": "none",
+   "evidence": "I have invested in SIP for long-term",
+   "confidence": "medium"
+  },
+  {
+   "source": "survey",
+   "trigger": "income_shock",
+   "evidence": "lack of money , was jobless at that time.",
+   "confidence": "medium"
+  },
+  {
+   "source": "survey",
+   "trigger": "belief_collapse",
+   "evidence": "I want to understand whether the returns are good and if my investment is actually growing as expected",
+   "confidence": "medium"
+  },
+  {
+   "source": "survey",
+   "trigger": "goal_reallocation",
+   "evidence": "I stopped deliberately because I wanted the funds for some other reasons.",
+   "confidence": "medium"
+  },
+  {
+   "source": "survey",
+   "trigger": "income_shock",
+   "evidence": "I lost job, hence paused.",
+   "confidence": "high"
+  },
+  {
+   "source": "play_store",
+   "trigger": "friction",
+   "evidence": "mutual funds mismatch. even after submitting CAMS statements multiple times, Their mutual funds display is always wrong. I mailed them a dozen times in last 20 days.",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "none",
+   "evidence": "I opened a SIP account in 2019 and want to redeem it but the platform is pending it since one year, Helpless feeling.",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "better_alternative",
+   "evidence": "Zerodha Coin provides features like quarterly SIPs and AMC SIPs, which I couldn't find on Groww. This lack of flexibility is one of the reasons I decided to shift from Groww to Zerodha Coin.",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "belief_collapse",
+   "evidence": "They don't tell clearly but manipulate you into buying regular (costly) mutual funds.",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "involuntary",
+   "evidence": "I invested in an emergency liquid mutual fund, but when I placed my first withdrawal order, Groww executed it the same day without generating a UTR number or crediting the money.",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "none",
+   "evidence": "Grow is a good app for SIP, I have also started SIP in it.",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "involuntary",
+   "evidence": "transfer money or mandate failed. insufficient balance in account.",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "friction",
+   "evidence": "मैंने दूसरी जगह से खरीदी हुई फंड। पूरे एक्सटर्नल है लेकिन उसके नीचे से एक्सटर्नल हटा दिया",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "involuntary",
+   "evidence": "जब आपको प्रॉफिट होना होता है तो यह ऑटोमेटिक एग्जिट कर देता है",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "market_fear",
+   "evidence": "Due to market fluctuations, I paused my investments for a while, which led to my account being deactivated.",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "involuntary",
+   "evidence": "autopay always failed, ipo always autopay failed, than I uninstall and use DHAN apps",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "none",
+   "evidence": "it helped me start my first sip",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "involuntary",
+   "evidence": "auto payment fails in mutual fund sip and there is no retry done by the app. If i don't open the app and do payment of sip manually the payment does not happen and remains pending.",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "none",
+   "evidence": "making mutual fund investments and SIP setup simple and hassle-free. Tracking investments and managing autopay is smooth. Highly recommended for long-term investors!",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "better_alternative",
+   "evidence": "when an existing fund was underperforming and I wanted to switch to a better-performing one",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "involuntary",
+   "evidence": "mere chune Sip ko poor bta kr auto swipe kr diya mene redemption ke liy permission bi ni di or vo balance mere bank me aa gya",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "friction",
+   "evidence": "Too slow in processing SIP orders. Deadline for completing the MF order gets violate and one on reaching support desk they ask to wait for another 3 to 4 working days due to which I had to resort to another platform to track my portfolio in real time.",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "friction",
+   "evidence": "they skipped this sip today even though I had set up everything and funds are there",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "none",
+   "evidence": "but I like to request one feature add step-up feature in SIP",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "friction",
+   "evidence": "i placed in mutual fund section after 2 days same amount is shown under same fund house i thought it was pending from my end so i completed it later it placed 2 orders for the same fund",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "none",
+   "evidence": "Managing SIPs, mutual funds, stocks, and IPOs is very easy.",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "none",
+   "evidence": "App should show selective all time XIRR also. for example if I want a collective Xirr of some stocks and excluding some other. same can be done for mutual fund as well.",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "involuntary",
+   "evidence": "even after activating Autopay sips gets cancelled. bank balance everything was there.",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "none",
+   "evidence": "SWP (Systematic Withdrawal Plan) और Mutual Fund के बदले Loan (Loan Against Mutual Funds) की सुविधा उपलब्ध होनी चाहिए",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "friction",
+   "evidence": "Why this much good app hava hard procedure for SWP procedure",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "friction",
+   "evidence": "म्युचुअल फंड में मेरा अकाउंट चेंज होने का ऑप्शन आ जाए और चेंज में कर सकूं नहीं हो रहा है",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "friction",
+   "evidence": "I am not able to see my mutual funds portfolio status because your inbuilt system is asking for details to open account.",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "none",
+   "evidence": "Sometimes out of compulsion, I have to withdraw the amount of SIP but till now I have not seen any fraud or fraud.",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "none",
+   "evidence": "similar fund option revoked in new update, anyone explain why?",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "belief_collapse",
+   "evidence": "It defaults to displaying the date-of-import value as invested amount, ruining portfolio accuracy.",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "none",
+   "evidence": "two folios are being created for my SIP",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "none",
+   "evidence": "mandat issue many time status not updated",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "none",
+   "evidence": "easy login and faster to create sip in less than 1 minute",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "belief_collapse",
+   "evidence": "Even Mutual Funds, price shows 11% increase and when you Redeem, it shows 11% loss.",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "friction",
+   "evidence": "Cumulative investing is not easy to track when investors have multiple financial goals. It would be great if the app introduced goal-wise trackers",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "none",
+   "evidence": "it's a very good app for SIP... I really appreciate it",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "none",
+   "evidence": "I only feel they should add option for SWP in application itself depending upon the fund value as its currently available in Web version only.",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "friction",
+   "evidence": "For MF SIPs, OTPs fail several times",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "friction",
+   "evidence": "Once MF orders are added into cart, No option to access cart and process payment for all orders at once",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "belief_collapse",
+   "evidence": "koi sip 2 sal se minus m return de rhi h",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "friction",
+   "evidence": "international funds currently not accepting new SIPs or lump-sum investments don't even appear when searched in the app",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "friction",
+   "evidence": "stp & swp not work properly",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "friction",
+   "evidence": "Allow us to pause SIPs indefinitely. Currently you can skip 1 installment or cancel completely but I just want to pause for a few months.",
+   "confidence": "medium"
+  },
+  {
+   "source": "play_store",
+   "trigger": "friction",
+   "evidence": "once SIP payment is delayed by evening immediately they charged my bank charged NACH bounce charges of 350",
+   "confidence": "medium"
+  },
+  {
+   "source": "app_store",
+   "trigger": "friction",
+   "evidence": "Facing issue while doing skip sip. Groww team, there is a critical bug while trying to skip sip on iPhone device. I have been taken to login screen whenever I am trying to skip sip.",
+   "confidence": "medium"
+  },
+  {
+   "source": "app_store",
+   "trigger": "none",
+   "evidence": "I am a new user , first time tried to invest in MF and found it so easier .",
+   "confidence": "medium"
+  },
+  {
+   "source": "app_store",
+   "trigger": "friction",
+   "evidence": "I havent got my money from the mutual funds i sold 3 months ago and have emailed them many times but still the same response",
+   "confidence": "medium"
+  },
+  {
+   "source": "app_store",
+   "trigger": "friction",
+   "evidence": "When we create multiple SIP mandates, instead of debiting once for each mandate it’s taking as separate transaction and debiting multiple times for the same day.",
+   "confidence": "medium"
+  },
+  {
+   "source": "app_store",
+   "trigger": "friction",
+   "evidence": "I’m unable to find SWP option in this app, could you pls help me to resolve the same.",
+   "confidence": "medium"
+  },
+  {
+   "source": "app_store",
+   "trigger": "none",
+   "evidence": "My Invesco India Contra Fund – Direct Growth investment of ₹1.25 lakh+ was also missing from the statement provided by Groww.",
+   "confidence": "medium"
+  },
+  {
+   "source": "app_store",
+   "trigger": "involuntary",
+   "evidence": "On groww when I will do sip it is rejected after 7-8 days dont know why it is happened with 4 different mutual funds, I have raised a ticket but they are not responding",
+   "confidence": "medium"
+  },
+  {
+   "source": "app_store",
+   "trigger": "none",
+   "evidence": "I invested ₹10.00 Lakhs in SIF of SBI MAGNUM LONG SHORT NFO on 12/08/2026 via Groww however the investment doesn’t reflect in Groww app even till date",
+   "confidence": "medium"
+  },
+  {
+   "source": "app_store",
+   "trigger": "none",
+   "evidence": "Unable to See SIP auto pay or date of Auto pay.",
+   "confidence": "medium"
+  },
+  {
+   "source": "app_store",
+   "trigger": "friction",
+   "evidence": "when I click on sip activate autopay - with my phonepe or googlepay upi it shows something went wrong",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "Whats the easiest way to stop sip in regular fund?. Should I just cancel the bank mandate or will doing so involve penalties?",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "Will I get Refund if I Stop the SIP After Paying the Initial Investment?",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "friction",
+   "evidence": "Zerodha equity SIP order should have an option to automatic stop or execute on holiday or off day.",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "How can I update amount of a AMC SIP? Is stopping the SIP the only option? Does stopping SIP has any other consequences ?",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "I would like to know what are the disadvantages with doing Coin SIP instead of AMC SIP?",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "If i have completed 3 years ELSS SIP and i have stopped SIP now, if i invest any lumsum after 3 years what will be the lock in period ?",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "friction",
+   "evidence": "AMC SIPs are actual SIP that cannot be paused. How can I convert from SIP",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "In traditional SIP the only way to stop an SIP is to cancel the ECS/NACH mandate form that would be given to the bank to debit money every month.",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "income_shock",
+   "evidence": "Our cash-flow can fluctuate quite a bit for various reasons, making it difficult to maintain a fixed monthly SIP. I stopped my SIPs after making the switch.",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "involuntary",
+   "evidence": "I have mandated Monthly SIP in Motilal Oswal S & P 500 but because of some reasons, they have stopped my SIP.",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "better_alternative",
+   "evidence": "Later I had stopped SIP and opened same funds in direct mutual fund and started SIP there.",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "better_alternative",
+   "evidence": "So stopped SIP for Regular fund and Created new SIP on Direct fund.",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "they are still taking sip investments which is not reflecting in your platform",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "start stop whenever you want without any NACH requirement. Increase or decrease SIP values at will.",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "Coin is the best platform to manage the SIP. You can start, pause, stop, increase, decrease",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "I have started monthly SIP on mutual fund recently with lock period of 3 http://years.Is years.Is it possible to start SIP without lock period?",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "If you start two SIP of Rs 50,000 and 1 Lakh starting 1 april 2021 and 2 april 2...",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "involuntary",
+   "evidence": "my SIP in SBI Gold Fund was being paused with immediate effect",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "friction",
+   "evidence": "this seems like an extremely tough task of having to send a physical request letter",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "friction",
+   "evidence": "But it wasn’t resumed automatically. Today I did it manually. Its a humble request please make it automatic",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "friction",
+   "evidence": "Could the Coin team support pause/resume and permitted amount changes for AMC SIPs?",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "better_alternative",
+   "evidence": "Advantages that coin SIP has over AMC sip is you get additional options in coin console to modify & Pause SIP",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "There is option in coin app to pause your SIP.",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "I will suggest to discuss with your CA for the income tax",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "friction",
+   "evidence": "we need this auto debit SIPs for mutual funds, Also we need one feature where we can do real SIPs via BSE and also pause and modify",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "What does mean the initial investment(i.e min Rs.5000) in mutual funds.?",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "friction",
+   "evidence": "I can’t find option to change that. We have option to change the frequency or pause the SIP but nothing on shifting he triggering day.",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "involuntary",
+   "evidence": "how much an investor can end up paying if they don't have sufficient balance. maybe even send a reminder a day prior",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "I have paused one of SIP but accidently i have deleted the SIP. What exactly delete means? Will by SIP gets redeemed now?",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "Is COIN SIP a regular MF ?Or are all MFs on COIN direct. I am unable to find an answer for the same anywhere.",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "so when i do SIPs, will they be treated as SIP only or as lumpsum ? in any manner like - exit/effect by market/returns etc ?",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "involuntary",
+   "evidence": "today on SIP date, SIP order was not placed but SIP amount through e-mandate was debited from my account",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "better_alternative",
+   "evidence": "I want to move to Coin now. Is it possible to pause (without exiting) the earlier SIPs",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "belief_collapse",
+   "evidence": "these are not performing well. Is this a dip and I continue my SIP? or do I pause for a bit due to uncertainty ?",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "friction",
+   "evidence": "Any attempt to make the payment using UPI failed. I tried it from different accounts and different UPI addresses - none worked.",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "friction",
+   "evidence": "And e-mandates are failing for HUF accounts. Is there something else I can use which has a lower cost?",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "I do not have bank mandate setup.",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "Trying to understand how SIPs work in Coin. I've been using COIN SIPs for well over a year now",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "No pre /post email notifications for SIP deductions.",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "is there a facility to Auto Debit the SIP Amount from the Bank, rather than adding funds or taking funds from Equity account?",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "I have recently setup about 4 monthly SIPs in Coin.",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "I want to know whether it will be deducted from my account directly or I need to pay every month.",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "do we have to add money to the Zerodha cash account once a alert is generated for subsequent purchases",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "Should I deposit money in the trading account every month for SIP? Or would they auto debit money from the linked bank account?",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "when we buy mutual fund through SIP so can it be debited itself through zerodha equity fund?",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "Do I need to add money every month to my trading account for SIP.",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "friction",
+   "evidence": "Coin SIPs deduct money even on holidays and then use the NAV of next working day for settlement - can this be fixed",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "Do I need to add funds to zerodha for payment of mutual funds or money will be deducted from bank based on sip date?",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "better_alternative",
+   "evidence": "include following best features of other mutual fund investments platform in Coin - Suggestive SIP dates Direct deduction of SIP amounts from Bank account",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "That particular MF only has an option of AMC SIP. So could somebody please tell, are there any additional steps that I need to fulfill before investing in it.",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "involuntary",
+   "evidence": "the funds were deducted on 26th OCT (SIP date) but were returned to my SB a/c on the 1st of Nov. Any reason for this? How to fix it?",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "friction",
+   "evidence": "please add biller option for coin for a smoot",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "I have started new SIP, amount deducted from account but order cancelled by user. so when will I get the refund for cancelled order ?",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "friction",
+   "evidence": "Without this, it is virtually impossible to time your mandates and I have SIPs being deducted at random days.",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "will this applicable to mutual fund such as Navi US fund, Maire Assest fanng mutual fund? If yes how this yds going to deducted during sip or during itr filling?",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "is there any works on getting SIP automatically deducted from Bank account instead of taking money from trading account.",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "Is it possible to set a date for sip in coin sip. Or is it deducted on the date we start sip.",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "SIP option in smallcase. Will there fees deducted every time I do the SIP?",
+   "confidence": "medium"
+  },
+  {
+   "source": "tradingqna",
+   "trigger": "none",
+   "evidence": "So if I have opted for a monthly SIP of a certain amount, do I need to first deposit that amount in Kite Balance (through Q Backoffice) or will Coin directly deduct that amount from my Bank Account monthly",
+   "confidence": "medium"
+  }
+ ],
+ "held_back_examples": [
+  {
+   "source": "survey",
+   "text": "Expected: Mainly four reasons: long-term wealth creation, specific goals, disciplined saving through auto-debit, and beating inflation with small monthly amounts. On the returns number: Most investors look at the number and ask, is this goo"
+  },
+  {
+   "source": "survey",
+   "text": "Expected: Well didnt expect anything, Just wanted to save some money and spend less. On the returns number: Wondering when will i get returns."
+  },
+  {
+   "source": "survey",
+   "text": "Expected: Growing money. What happened: Unaware about withdrawal rules. Unware that have to wait for a certain period just to with my very first month of investment. On the returns number: Is it going to grow or any time will it give me a h"
+  },
+  {
+   "source": "survey",
+   "text": "Expected: Compounding. What happened: Job loss."
+  },
+  {
+   "source": "survey",
+   "text": "Expected: Profits in every month, even if its small."
+  },
+  {
+   "source": "survey",
+   "text": "Expected: I expected steady positive returns every month. On the returns number: I expect more returns. What would help: A explanation of what's exactly happened in investment."
+  },
+  {
+   "source": "survey",
+   "text": "Expected: Long term Stability. What happened: Was tight on money. What would help: Better returns."
+  },
+  {
+   "source": "survey",
+   "text": "Expected: I expected my investment to grow over the long term."
+  },
+  {
+   "source": "play_store",
+   "text": "super app in share market and sips one of the best 👌"
+  },
+  {
+   "source": "play_store",
+   "text": "Mutual fund locking system is wrong. Starting investing money date is important. After investing money date is not important."
+  },
+  {
+   "source": "play_store",
+   "text": "Grow has a very good user interface but the brokerage is very high while buying and selling you will experience it. don't apply for an IPO. I never got an IPO from Grow. even SIP is also not good here."
+  },
+  {
+   "source": "play_store",
+   "text": "only some private banks are allowed for loading funds for US investments. When can expect other banks and Govt Banks."
+  },
+  {
+   "source": "play_store",
+   "text": "i love this application as its simple and easy to invest in mutual fund and stock.. i have been using since 3 years and quite satisfied"
+  },
+  {
+   "source": "play_store",
+   "text": "good always feel sip, groww thank you deaf"
+  },
+  {
+   "source": "play_store",
+   "text": "After updating..Where is F and O order preference?"
+  },
+  {
+   "source": "play_store",
+   "text": "Hi Team, Groww apps is excellent easy to use but please add feature stock Share SIP options. Hi team your nifty terminal lagging in the desktop and everything 20 to 25 minutes auto frezze please resolve this issue."
+  },
+  {
+   "source": "play_store",
+   "text": "their is risk to invest in groww , Because my money has blocked to incorrect kyc information.it is best to invest but I will give u a tip fill the correct kyc information and supposed you are minor 18 in Indian and you want to invest your m"
+  },
+  {
+   "source": "play_store",
+   "text": "It very bad app for stock . Because at last moment it technical issues. It doesn't use and coustomer services is not good. bad mutual funds. because my found is missing and support team is not helping. groww is bad for mutual funds. do not "
+  },
+  {
+   "source": "play_store",
+   "text": "No option to view family portfolio on one page. We have to switch to see the other family member portfolio. Actually there should be a consolidated view of all the mutual fund investments just like PowerUp, Dezerv, IndMoney apps."
+  },
+  {
+   "source": "play_store",
+   "text": "User interface is excellent, but App takes more Time in Showing Daily Gain/Loss of Mutual Funds. I have to keep another App just to track my Daily Gains/Losses of MFs."
+  },
+  {
+   "source": "play_store",
+   "text": "Very disappointing experience. This is not the first time I’ve faced these issues. Funds keep getting added/displayed incorrectly, Lifetime XIRR is not showing, and redemption requests have also been rejected due to unit availability issues"
+  },
+  {
+   "source": "play_store",
+   "text": "I need customer support I have ipo autopay issue this is not work to auto pay plz solve this problem"
+  },
+  {
+   "source": "play_store",
+   "text": "The only reason which looks bad is that this app is not transparent with investors. They should show the total expense ratio for each mutual fund including GST and Statutory charges. So one can compare fairly. GST calculation vary for diffe"
+  },
+  {
+   "source": "play_store",
+   "text": "is app ke madhyam se Jo nahin bhi jaanta hai SIP ke bare mein un sabke liye yah GROWW bahut achcha platform hai YAH AAPKE MEHNAT KI KAMAI KO Apne hisab se invest karta hai"
+  },
+  {
+   "source": "play_store",
+   "text": "​\"Groww provides an incredibly smooth and transparent investment experience. The user interface is clean, making tracking and managing Stocks and Mutual Funds completely effortless. Highly recommended for both beginners and seasoned investo"
+  },
+  {
+   "source": "play_store",
+   "text": "@Groww, the Mutual Fund portfolio analysis dashboard is great, but we need individual market cap breakdowns (Large/Mid/Small-cap) at the scheme level. Please add this visualization directly to: 1. Inside invested MF Investments details: To "
+  },
+  {
+   "source": "play_store",
+   "text": "Groww is a Very Good Platform for stocks and Mutual fund investments im using it from two years onwards and I'm feeling very comfortable and very easy to use. Thanks to groww for such a wonderful Platform."
+  },
+  {
+   "source": "play_store",
+   "text": "very bad experience worst customer service can't show my investment properly which I've dinner through their app only. They can't fetch external portfolio , that's a seperate issue all together. Complained multiple times , shared CAMS state"
+  },
+  {
+   "source": "play_store",
+   "text": "ग्रो कंपनी से कभी लोन मत लेना चोर और बेईमान कंपनी है आपकी किस्त खाते में पैसा होते हुए भी बाउंस करके चार्ज लगती है"
+  },
+  {
+   "source": "play_store",
+   "text": "The app is good. it alao show how much is the STCG & LTCG. I mostly like the SIP calculator."
+  },
+  {
+   "source": "play_store",
+   "text": "This app is becoming from good to poor grade . previously we are able to see all the ratios of mf , but now only expense ratio available."
+  },
+  {
+   "source": "play_store",
+   "text": "It is the best platform for investment in mutual fund."
+  },
+  {
+   "source": "play_store",
+   "text": "fabulous app for trading and mutual fund investments..."
+  },
+  {
+   "source": "play_store",
+   "text": "installed the app nearly 6 years ago , and used it for the last 4 years almost every day. over the years the improvement is excellent, mutual fund and stock buy and selling is without any hassle , hardly i have ever faced any issue while in"
+  },
+  {
+   "source": "play_store",
+   "text": "very bad. my 2 fund missed in Groww App Dashboard"
+  },
+  {
+   "source": "play_store",
+   "text": "grow mutual fund application open problem please help 😔😔🙏"
+  },
+  {
+   "source": "play_store",
+   "text": "great user experience and best for all the investment of stocks and mutual funds, interface of the app is user friendly and great built."
+  },
+  {
+   "source": "play_store",
+   "text": "mein ne ipo mein apply Kiya mere paise 2 bar cut hue mein ne ek bar apply Kiya tha and sabse badi problem mein ne cancel hone k bad Paisa aaya nai 3 din ho gye"
+  },
+  {
+   "source": "play_store",
+   "text": "paroking mera bahut liya gya ik liye gya is liya hame bahut kast hai is liya sara paisa widra kiye hum"
+  },
+  {
+   "source": "play_store",
+   "text": "Now this app works like mutual fund agent.. investment doing in this app goes like regular plan... really cheater app..😡😡"
+  }
+ ]
+}
