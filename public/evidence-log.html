@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SIP Engine Evidence Log</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:ital,wght@0,500;0,600;1,400&display=swap">
+
+<style>
+  /* Layout: single measured column, data tables full-bleed within it,
+     corrections marked by a left rule rather than a card. */
+  :root {
+    --paper: #fcfcfb;
+    --ink: #17181d;
+    --ink-2: #44474f;
+    --ink-3: #777b85;
+    --rule: #e2e2de;
+    --tint: #f3f3f0;
+    --accent: #2b4a8b;
+    --flag: #9a5b14;
+    --font-display: "Spectral", Georgia, "Times New Roman", serif;
+    --font-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #15161a;
+      --ink: #eceef2;
+      --ink-2: #b6bac3;
+      --ink-3: #868b96;
+      --rule: #2c2e35;
+      --tint: #1d1f25;
+      --accent: #9db4e8;
+      --flag: #e0a558;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #15161a;
+    --ink: #eceef2;
+    --ink-2: #b6bac3;
+    --ink-3: #868b96;
+    --rule: #2c2e35;
+    --tint: #1d1f25;
+    --accent: #9db4e8;
+    --flag: #e0a558;
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.62;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 48px 72px;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin: 0 0 10px;
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(30px, 5.2vw, 40px);
+    line-height: 1.14;
+    letter-spacing: -0.012em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  .standfirst {
+    font-size: 17px;
+    color: var(--ink-2);
+    margin: 0 0 8px;
+    max-width: 40rem;
+  }
+  h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 23px;
+    letter-spacing: -0.008em;
+    margin: 54px 0 4px;
+    text-wrap: balance;
+  }
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 30px 0 4px;
+  }
+  p { margin: 12px 0; color: var(--ink-2); }
+  p.lead { color: var(--ink); }
+  strong { color: var(--ink); font-weight: 600; }
+
+  hr {
+    border: 0;
+    border-top: 1px solid var(--rule);
+    margin: 14px 0 0;
+  }
+
+  .scroller { overflow-x: auto; margin: 18px 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 14.5px; min-width: 30rem; }
+  caption {
+    text-align: left;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    padding-bottom: 8px;
+  }
+  th, td {
+    text-align: left;
+    padding: 9px 14px 9px 0;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  th {
+    font-weight: 600;
+    font-size: 12.5px;
+    letter-spacing: 0.03em;
+    color: var(--ink-3);
+    text-transform: uppercase;
+  }
+  td.num, th.num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    font-family: var(--font-mono);
+    padding-right: 0;
+  }
+  tr.total td { border-bottom: none; border-top: 2px solid var(--ink); font-weight: 600; color: var(--ink); }
+
+  .correction {
+    border-left: 3px solid var(--flag);
+    padding: 2px 0 2px 18px;
+    margin: 26px 0;
+  }
+  .correction h3 { margin-top: 0; color: var(--ink); }
+  .tagline {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--flag);
+    margin: 0 0 4px;
+  }
+
+  blockquote {
+    margin: 14px 0;
+    padding: 0 0 0 16px;
+    border-left: 2px solid var(--rule);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 16.5px;
+    color: var(--ink-2);
+  }
+  blockquote cite {
+    display: block;
+    font-family: var(--font-mono);
+    font-style: normal;
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-top: 7px;
+  }
+
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.88em;
+    background: var(--tint);
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+
+  .ba {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 18px 0;
+  }
+  .ba > div {
+    flex: 1 1 180px;
+    min-width: 0;
+    background: var(--tint);
+    padding: 14px 16px;
+  }
+  .ba .k {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .ba .v {
+    font-family: var(--font-mono);
+    font-size: 21px;
+    color: var(--ink);
+    margin-top: 3px;
+    font-variant-numeric: tabular-nums;
+  }
+  .ba .n { font-size: 13px; color: var(--ink-3); margin-top: 2px; }
+
+  a { color: var(--accent); }
+  a:focus-visible, :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  footer {
+    margin-top: 58px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    font-size: 13.5px;
+    color: var(--ink-3);
+  }
+  ul { color: var(--ink-2); padding-left: 1.1rem; }
+  li { margin: 6px 0; }
+</style>
+
+</head>
+<body>
+<main>
+  <p class="eyebrow">AI Evidence Log · Groww · SIP continuation</p>
+  <h1>What the discovery engine analysed, where it was wrong, and how that was found</h1>
+  <p class="standfirst">
+    A record of the corpus behind the SIP continuation analysis, the quality gate applied to every
+    label, and the three places the AI output was rejected or corrected. Compiled 9 November 2026.
+  </p>
+  <hr>
+
+  <h2>Sources and volume</h2>
+  <p>
+    Collected 1 November 2026. Google Play reviews were pulled through the store's own review
+    endpoint, newest first; App Store reviews through the public RSS feed for the India storefront;
+    TradingQ&amp;A through its Discourse search API across sixteen queries about stopping, pausing,
+    skipping and restarting a SIP. Survey free-text came from a screener run for this project.
+  </p>
+
+  <div class="scroller">
+    <table>
+      <caption>Corpus after filtering</caption>
+      <thead>
+        <tr>
+          <th>Source</th>
+          <th class="num">Pulled</th>
+          <th class="num">Kept</th>
+          <th class="num">About SIPs</th>
+          <th class="num">Counted</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Google Play — Groww</td><td class="num">9,900</td><td class="num">1,803</td><td class="num">98 (5.4%)</td><td class="num">44</td></tr>
+        <tr><td>TradingQ&amp;A — Zerodha forum</td><td class="num">317</td><td class="num">317</td><td class="num">208 (65.6%)</td><td class="num">109</td></tr>
+        <tr><td>App Store — Groww (IN)</td><td class="num">500</td><td class="num">242</td><td class="num">25 (10.3%)</td><td class="num">10</td></tr>
+        <tr><td>Screener free-text</td><td class="num">27</td><td class="num">20</td><td class="num">15 (75.0%)</td><td class="num">7</td></tr>
+        <tr class="total"><td>Total</td><td class="num">10,744</td><td class="num">2,382</td><td class="num">346</td><td class="num">170</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    <strong>Kept</strong> means the item had at least 40 characters of text — a declared filter, applied
+    before any labelling, to remove one-word reviews. <strong>About SIPs</strong> is the engine's
+    relevance judgement. <strong>Counted</strong> is what survived the quality gate and appears in any
+    figure quoted anywhere in this project.
+  </p>
+  <p>
+    <strong>Reddit was not collected.</strong> The brief names it as a source; it was unreachable from
+    the collection environment. It is declared here rather than quietly substituted. TradingQ&amp;A
+    covers the same forum-discussion role and proved the densest source in the corpus.
+  </p>
+
+  <h2>The quality gate</h2>
+  <p class="lead">
+    A classifier asked to label 2,382 items will label 2,382 items, whether or not the text supports
+    it. Every label therefore carries an <code>evidence</code> span, and code — not the model — decides
+    whether that span is good enough to count.
+  </p>
+  <p>An item is counted only if all three hold:</p>
+  <ul>
+    <li>the evidence string is at least 8 characters;</li>
+    <li>the labelling was not marked low-confidence;</li>
+    <li>the quoted span <strong>literally appears in the source text</strong>, after normalising whitespace.</li>
+  </ul>
+  <p>
+    <strong>176 items the engine judged relevant were held back by this gate</strong> — 51% of everything
+    it wanted to count. They are displayed in a separate table in the engine rather than silently
+    dropped or silently counted.
+  </p>
+
+  <h2>Where the AI output was rejected or corrected</h2>
+
+  <div class="correction">
+    <p class="tagline">Correction 1 · systematic · caught by inspecting the distribution</p>
+    <h3>The engine counted app complaints as SIP evidence</h3>
+    <p>
+      The first full pass over the corpus returned a distribution that looked wrong on its face: one
+      trigger held three quarters of all counted items. Reading a random sample of those items showed
+      why — the relevance rule had been underspecified, so any unhappy review qualified.
+    </p>
+    <blockquote>
+      the worst broking app , many glitches whilentrading i won't recommend using it
+      <cite>Labelled relevant · friction · counted</cite>
+    </blockquote>
+    <blockquote>
+      groww app F and O always struck, glitches,slow moments very bad, very worst app always lag
+      <cite>Labelled relevant · friction · counted</cite>
+    </blockquote>
+    <p>
+      Neither mentions a mutual fund. The prompt was rewritten to define relevance explicitly, name the
+      exclusions — trading and F&amp;O complaints, charts, brokerage, app crashes, login and KYC, support,
+      wallet mechanics, contentless praise — restrict <code>friction</code> to friction inside the SIP
+      journey, and state that a low relevance rate is the correct answer.
+    </p>
+    <div class="ba">
+      <div><div class="k">Relevance</div><div class="v">37.2% → 14.5%</div><div class="n">886 → 346 items</div></div>
+      <div><div class="k">Counted</div><div class="v">539 → 170</div><div class="n">22.6% → 7.1% of corpus</div></div>
+      <div><div class="k">Largest trigger</div><div class="v">75.5% → 25.3%</div><div class="n">friction, as a share</div></div>
+    </div>
+    <p>
+      Both runs are retained in the repository. Had the first run been trusted, the project's central
+      claim would have rested on reviews about chart tools.
+    </p>
+  </div>
+
+  <div class="correction">
+    <p class="tagline">Correction 2 · single item · label overruled</p>
+    <h3>An information gap was coded as a change of belief</h3>
+    <blockquote>
+      Unaware about withdrawal rules. Unware that have to wait for a certain period just to with my
+      very first month of investment.
+      <cite>Screener free-text · engine said belief_collapse</cite>
+    </blockquote>
+    <p>
+      The engine read this as the investor concluding the product was not working. It is not: nothing
+      about their belief changed. They met a rule they did not know existed. The trigger is closer to
+      <code>friction</code>, and the real signal is the information gap —
+      <code>exit_withdrawal_rules</code> — which appears in 17.1% of counted items and is reported on
+      its own rather than folded into a trigger.
+    </p>
+  </div>
+
+  <div class="correction">
+    <p class="tagline">Correction 3 · gate behaviour · accepted as correct</p>
+    <h3>A false positive the gate caught before it was counted</h3>
+    <blockquote>
+      absolutely scam high brokerage charge and oposite direction trade status today Market is down but
+      now is going point its scam app dot trust
+      <cite>Marked relevant · low confidence · held back, not counted</cite>
+    </blockquote>
+    <p>
+      The relevance judgement was wrong — this is about brokerage and trading. The gate excluded it
+      anyway, on confidence. This is recorded not as a defect but as the designed behaviour working:
+      the model's judgement failed and the deterministic check caught it. It is also the reason the
+      held-back count is reported rather than hidden; at 176 items it is a meaningful share of what the
+      engine wanted to say.
+    </p>
+  </div>
+
+  <h2>What the gate does not check</h2>
+  <p>
+    The gate tests grounding and policy. It does not test whether an explanation is factually correct.
+    During MVP testing a draft answer explained unit mathematics in a way that was subtly wrong —
+    asserting that units bought at a lower NAV are therefore worth less than their purchase price — and
+    passed every check, because nothing in it recommended a fund, predicted a return, or applied
+    pressure. Numeric cases are the first thing the next iteration of the evaluation set should cover.
+  </p>
+
+  <h2>Golden set: how often the engine agreed with a human</h2>
+  <p>
+    Ten items were drawn from the counted set, spread across sources and across trigger types so the
+    sample could not be dominated by one bucket, and labelled by hand on the field the whole analysis
+    rests on: <strong>what caused the SIP to stop or nearly stop</strong>. The hand labels were decided
+    without looking at the engine's answer, then compared.
+  </p>
+
+  <div class="ba">
+    <div><div class="k">Agreement</div><div class="v">8 / 9</div><div class="n">89% on primary trigger</div></div>
+    <div><div class="k">Unscored</div><div class="v">1</div><div class="n">genuinely ambiguous, left out</div></div>
+    <div><div class="k">Field tested</div><div class="v">trigger</div><div class="n">the field every count depends on</div></div>
+  </div>
+
+  <div class="scroller">
+    <table>
+      <caption>Hand label vs engine label</caption>
+      <thead>
+        <tr><th class="num">#</th><th>Item, in brief</th><th>Hand label</th><th>Engine</th><th></th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="num">1</td><td>Auto-SIP reduced and switched without permission</td><td>involuntary</td><td>involuntary</td><td>agree</td></tr>
+        <tr><td class="num">2</td><td>Two years negative but the app shows 30% return</td><td>belief_collapse</td><td>belief_collapse</td><td>agree</td></tr>
+        <tr><td class="num">3</td><td>STP and SWP not working</td><td>friction</td><td>friction</td><td>agree</td></tr>
+        <tr><td class="num">4</td><td>No option to change the SIP trigger day</td><td>friction</td><td>friction</td><td>agree</td></tr>
+        <tr><td class="num">5</td><td>Every UPI payment attempt for the SIP failed</td><td>friction</td><td>friction</td><td>agree</td></tr>
+        <tr><td class="num">6</td><td>Fund paused the SIP by email, with immediate effect</td><td>involuntary</td><td>involuntary</td><td>agree</td></tr>
+        <tr><td class="num">7</td><td>Fund-comparison section removed after an update</td><td>friction</td><td>better_alternative</td><td><strong>differ</strong></td></tr>
+        <tr><td class="num">8</td><td>UPI autopay took ₹13,500 against a ₹5,000 SIP</td><td>involuntary</td><td>involuntary</td><td>agree</td></tr>
+        <tr><td class="num">9</td><td>Chart of rising SIP cancellations, market commentary</td><td>unscored</td><td>market_fear</td><td>—</td></tr>
+        <tr><td class="num">10</td><td>Coin SIP vs AMC SIP: modify and pause available</td><td>better_alternative</td><td>better_alternative</td><td>agree</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    <strong>Scope of this figure.</strong> It scores trigger assignment on items already judged
+    relevant. It does not re-test the relevance triage, which Correction 1 covers separately. Nine
+    scored items is a spot check, not a reliability study, and is reported as one.
+  </p>
+
+  <div class="correction">
+    <p class="tagline">Correction 4 · single item · from the golden set</p>
+    <h3>The engine read intent into a missing feature</h3>
+    <blockquote>
+      After the recent update, the “Similar Funds in the Same Category” section has been removed. This
+      feature was very useful when an existing fund was underperforming and I wanted to switch to a
+      better-performing one.
+      <cite>Play Store · engine said better_alternative · corrected to friction</cite>
+    </blockquote>
+    <p>
+      The engine saw “switch to a better-performing one” and coded the person as leaving for an
+      alternative. They are not leaving anything. They are describing a tool they can no longer use.
+      The failure mode is general and worth naming: the engine weights surface vocabulary over what
+      actually happened, which is the same error that produced Correction 1 at scale.
+    </p>
+  </div>
+
+  <h2>Reproducing any figure</h2>
+  <p>
+    Every number in the deck traces to <code>data/labelled.json</code> in the engine repository, which
+    holds all 2,382 items with their full label set, evidence span, confidence and gate result. The
+    superseded first run is kept alongside it as
+    <code>data/labelled_v1_loose_triage.json</code>. The schema and the gate are in
+    <code>lib/schema.ts</code>; the gate is the function <code>passesGate</code>, nine lines long.
+  </p>
+
+  <footer>
+    Model: claude-haiku-5-5 · Corpus collected 1 November 2026 · Log compiled 9 November 2026.
+    Public sources only. No account numbers, PAN or portfolio data were collected from any respondent.
+  </footer>
+</main>
+
+</body>
+</html>
